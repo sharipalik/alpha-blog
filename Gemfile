@@ -9,8 +9,6 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.3"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -59,7 +57,8 @@ group :development do
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
-
+  # Use sqlite3 as the database for Active Record
+  gem "sqlite3", "~> 1.4"
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
@@ -69,4 +68,15 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+end
+
+group :production do
+  # Use the latest version of the master branch of Active Job [https://guides.rubyonrails.org/active_job_basics.html]
+  # gem "activejob", github: "rails/rails"
+
+  # Use a PostgreSQL database on Heroku [https://devcenter.heroku.com/articles/heroku-postgresql]
+  gem "pg"
+
+  # Use Redis adapter to run Action Cable in production
+  # gem "redis", "~> 4.0"
 end
